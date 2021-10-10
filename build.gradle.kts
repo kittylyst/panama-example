@@ -1,5 +1,5 @@
 plugins {
-  id("org.beryx.jlink") version("2.23.3")
+  id("org.beryx.jlink") version("2.24.2")
 }
 
 repositories {
@@ -24,7 +24,7 @@ sourceSets {
 }
 
 tasks.withType<JavaCompile> {
-  options.compilerArgs = listOf("--add-exports", "jdk.internal.jvmstat/sun.jvmstat.monitor=wgjd.discovery")
+  options.compilerArgs = listOf()
 }
 
 tasks.jar {
@@ -33,10 +33,11 @@ tasks.jar {
   }
 }
 
-jlink {
-  targetPlatform("local", System.getProperty("java.home"))
-
-  launcher{
-    jvmArgs = listOf("--add-exports", "jdk.internal.jvmstat/sun.jvmstat.monitor=wgjd.discovery")
-  }
-}
+//jlink {
+//  targetPlatform("local", System.getProperty("java.home"))
+//
+//  launcher{
+//    name = "pngreader"
+//    jvmArgs = listOf("--add-modules", "jdk.incubator.foreign", "--enable-native-access=ALL-UNNAMED")
+//  }
+//}

@@ -1,6 +1,5 @@
-package ch16;
+package wgjd.png;
 
-import jdk.incubator.foreign.Addressable;
 import jdk.incubator.foreign.MemoryAddress;
 import jdk.incubator.foreign.MemorySegment;
 import jdk.incubator.foreign.SegmentAllocator;
@@ -10,7 +9,7 @@ import static jdk.incubator.foreign.CLinker.toCString;
 import static jdk.incubator.foreign.ResourceScope.newConfinedScope;
 import static org.libspng.spng_h.*;
 
-public class PanamaExamples {
+public class PngReader {
     public static void main(String[] args) {
         if (args.length < 1) {
             System.err.println("Usage: Panama <fname>");
@@ -58,5 +57,4 @@ public class PanamaExamples {
             System.out.println("File type: " + colorTypeMsg);
         }
     }
-
 }
